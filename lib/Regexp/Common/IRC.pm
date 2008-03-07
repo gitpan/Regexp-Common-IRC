@@ -1,5 +1,5 @@
 package Regexp::Common::IRC;
-$VERSION = 0.03;
+$VERSION = 0.04;
 use strict;
 use Regexp::Common qw(pattern clean no_defaults);
 
@@ -155,7 +155,7 @@ pattern
   create => qq/(?k:$targetmask)/,
   ;
 
-my $nick = "(?:$letter|$special)(?:$letter|$digit|$special){0,19}";
+my $nick = "(?:$letter|$special)(?:$letter|$digit|$special|-){0,19}";
 pattern
   name   => [qw(IRC nick -keep)],
   create => qq/(?k:$nick)/,
